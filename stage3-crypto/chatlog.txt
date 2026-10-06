@@ -1,0 +1,5 @@
+Buyer: Are the new files secure?
+DarkK1ng99: Yes, they are stored on the backup node.
+Buyer: What is the address for that node?
+DarkK1ng99: VHRNYJSNT{JBFAUGE7VKCG}
+Buyer: Got it. I'll drop the numbers from my alias to decrypt it.
