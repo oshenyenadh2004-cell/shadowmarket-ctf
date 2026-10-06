@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  stage4-web:
+    build: ../stage4-web
+    container_name: shadowmarket-stage4
+    ports:
+      - "5000:5000"
+    networks:
+      - ctf-isolated
+    restart: unless-stopped
+
+networks:
+  ctf-isolated:
+    driver: bridge
+    internal: true   # no internet egress for this network
