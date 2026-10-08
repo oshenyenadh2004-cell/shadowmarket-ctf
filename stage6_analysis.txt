@@ -1,0 +1,20 @@
+Stage 6 - Network Forensics
+
+PCAP analysed:
+takedown.pcap
+
+Wireshark filter:
+tcp.stream eq 0
+
+Finding:
+The TCP stream contained an HTTP POST request with an encoded Payload.
+
+Server:
+UMBRA_NODE_9
+
+Decoding:
+The Payload was Base64 encoded.
+It was decoded using CyberChef with the From Base64 operation.
+
+Result:
+SHADOWMKT{TAKEDOWN_CONFIRMED}
