@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}{{ stage.title }} — ShadowMarket Takedown{% endblock %}
+{% block content %}
+<a class="back-link" href="{{ url_for('index') }}">&larr; Return to case file</a>
+
+<div class="evidence-label">Evidence &middot; {{ stage.domain }}</div>
+<h1 class="title">{{ stage.title }}</h1>
+<div class="evidence-meta" style="margin-bottom:10px;">
+  <span class="dot {{ 'easy' if 'Easy' in stage.difficulty else ('hard' if 'Hard' in stage.difficulty else 'moderate') }}"></span>
+  Clearance: {{ stage.difficulty }}
+</div>
+{% if is_solved %}<span class="stamp solved">Case Closed</span>{% endif %}
+
+<hr class="rule">
+
+{% if stage.type == 'static' %}
+<div class="panel">
+  <h3>Attached Files</h3>
+  {% for f in stage.files %}
+  <div class="file-row">
+    <a href="{{ url_for('download', stage_id=stage_id, filename=f) }}">{{ f }}</a>
+    <span class="tag">Download</span>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="panel">
+  <h3>Live System Access</h3>
+  <div class="file-row">
+    <a href="{{ stage.url }}" target="_blank" rel="noopener">{{ stage.url }}</a>
+    <span class="tag">Launch</span>
+  </div>
+</div>
+{% endif %}
+
+<div class="panel">
+  <h3>Submit Decryption Key</h3>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, m in messages %}
+      <div class="log-line {{ category }}">{{ m }}</div>
+    {% endfor %}
+  {% endwith %}
+  <form method="POST" action="{{ url_for('submit', stage_id=stage_id) }}" style="margin-top:12px;">
+    <div class="terminal-field">
+      <span class="prompt">&gt;</span>
+      <input type="text" name="flag" placeholder="SHADOWMKT{...}" autocomplete="off">
+      <span class="cursor"></span>
+    </div>
+    <button type="submit" class="btn">Validate Key</button>
+  </form>
+</div>
+{% endblock %}

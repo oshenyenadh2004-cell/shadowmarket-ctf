@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}ShadowMarket Takedown{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink-950:#0B0F14; --ink-900:#141B22; --ink-850:#1B2430;
+    --paper:#E8E4D9; --paper-dim:#9CA3AE;
+    --amber:#E2A33D; --rust:#B2412E; --teal:#3FA796;
+    --line: rgba(232,228,217,0.14); --radius: 3px;
+  }
+  * { box-sizing: border-box; }
+  html,body { margin:0; padding:0; background:var(--ink-950); color:var(--paper);
+    font-family:'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace; }
+  body { line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a { color:var(--amber); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline:2px solid var(--amber); outline-offset:2px; }
+  .wrap { max-width:720px; margin:0 auto; padding:48px 24px 80px; }
+  .case-id { font-size:12px; letter-spacing:.14em; color:var(--paper-dim); text-transform:uppercase; }
+  h1.title { font-size:28px; margin:10px 0 4px; font-weight:700; color:var(--paper); }
+  .rule { border:none; border-top:1px solid var(--line); margin:20px 0; }
+  .brief { color:var(--paper-dim); font-size:14px; max-width:62ch; }
+  .back-link { display:inline-block; font-size:13px; color:var(--paper-dim); margin-bottom:28px; }
+  .back-link:hover { color:var(--amber); }
+  .progress-row { display:flex; align-items:center; gap:12px; margin-top:22px; font-size:12px;
+    color:var(--paper-dim); letter-spacing:.08em; text-transform:uppercase; }
+  .progress-track { flex:1; height:4px; background:var(--ink-850); border-radius:2px; overflow:hidden; }
+  .progress-fill { height:100%; background:var(--teal); }
+  .stamp { font-size:11px; font-weight:700; letter-spacing:.12em; padding:3px 9px;
+    border:1.5px solid currentColor; border-radius:2px; display:inline-block; transform:rotate(-3deg); }
+  .stamp.locked { color:var(--paper-dim); border-style:dashed; }
+  .stamp.unlocked { color:var(--amber); }
+  .stamp.solved { color:var(--teal); }
+  .evidence-card { border-top:1px solid var(--line); padding:22px 0; display:block; }
+  .evidence-head { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; }
+  .evidence-label { font-size:11px; letter-spacing:.14em; color:var(--paper-dim); text-transform:uppercase; }
+  .evidence-title { font-size:19px; color:var(--paper); margin:6px 0 8px; font-weight:600; }
+  .evidence-title a { color:var(--paper); }
+  .evidence-title a:hover { color:var(--amber); }
+  .evidence-meta { font-size:12px; color:var(--paper-dim); display:flex; gap:8px; align-items:center; }
+  .dot { width:7px; height:7px; border-radius:50%; display:inline-block; }
+  .dot.easy { background:var(--teal); }
+  .dot.moderate { background:var(--amber); }
+  .dot.hard { background:var(--rust); }
+  .panel { background:var(--ink-900); border:1px solid var(--line); border-radius:var(--radius); padding:20px; margin:18px 0; }
+  .panel h3 { margin:0 0 12px; font-size:12px; letter-spacing:.12em; color:var(--paper-dim); text-transform:uppercase; }
+  .file-row { display:flex; justify-content:space-between; align-items:center; padding:9px 0; border-bottom:1px solid var(--line); font-size:14px; }
+  .file-row:last-child { border-bottom:none; }
+  .file-row a { color:var(--paper); }
+  .file-row a:hover { color:var(--amber); }
+  .file-row .tag { font-size:11px; color:var(--paper-dim); }
+  .terminal-field { display:flex; align-items:center; background:var(--ink-950); border:1px solid var(--line);
+    border-radius:var(--radius); padding:12px 14px; gap:8px; }
+  .terminal-field .prompt { color:var(--amber); }
+  .terminal-field input { flex:1; background:transparent; border:none; color:var(--paper);
+    font-family:inherit; font-size:14px; outline:none; }
+  .terminal-field input::placeholder { color:var(--paper-dim); }
+  .cursor { display:inline-block; width:8px; height:16px; background:var(--amber); animation:blink 1s step-end infinite; }
+  @media (prefers-reduced-motion:reduce){ .cursor{ animation:none; } }
+  @keyframes blink { 50%{ opacity:0; } }
+  .btn { margin-top:14px; background:var(--amber); color:var(--ink-950); border:none; padding:10px 18px;
+    font-family:inherit; font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+    border-radius:var(--radius); cursor:pointer; }
+  .btn:hover { background:#f0b655; }
+  .log-line { font-size:13px; padding:4px 0; }
+  .log-line.success { color:var(--teal); }
+  .log-line.error { color:var(--rust); }
+  .log-line::before { content:"> "; color:var(--paper-dim); }
+  footer { margin-top:60px; font-size:11px; color:var(--paper-dim); border-top:1px solid var(--line); padding-top:18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+{% block content %}{% endblock %}
+<footer>All individuals, organizations and events depicted are fictional. Prepared for SLIIT IE3132 Penetration Testing.</footer>
+</div>
+</body>
+</html>
