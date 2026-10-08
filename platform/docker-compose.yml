@@ -1,16 +1,43 @@
 version: "3.9"
 
 services:
+  portal:
+    build:
+      context: ..
+      dockerfile: platform/portal/Dockerfile
+    container_name: shadowmarket-portal
+    ports:
+      - "9090:8080"
+    networks:
+      - ctf-public
+      - ctf-internal
+    depends_on:
+      - flag-validator
+      - stage4-web
+    restart: unless-stopped
+
+  flag-validator:
+    build:
+      context: .
+    container_name: shadowmarket-validator
+    volumes:
+      - ./validation_log.txt:/app/validation_log.txt
+    networks:
+      - ctf-internal
+    restart: unless-stopped
+
   stage4-web:
     build: ../stage4-web
     container_name: shadowmarket-stage4
     ports:
       - "5000:5000"
     networks:
-      - ctf-isolated
+      - ctf-internal
     restart: unless-stopped
 
 networks:
-  ctf-isolated:
+  ctf-public:
     driver: bridge
-    internal: true   # no internet egress for this network
+  ctf-internal:
+    driver: bridge
+    internal: true
