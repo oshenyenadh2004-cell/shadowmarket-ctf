@@ -12,6 +12,22 @@ This document records integration and functional testing of the ShadowMarket Tak
 - Stage 4 URL: `http://localhost:5000`
 - Containers: `shadowmarket-portal`, `shadowmarket-validator`, `shadowmarket-stage4`
 
+## 2.1 Tools Used for Testing
+
+
+Visual Studio Code (VS Code)
+
+To inspect project files, edit documentation, and use the terminal.
+
+Docker
+
+To run and inspect the platform's containers.
+
+Docker Compose
+
+To build, start, stop, and manage the platform services.
+
+
 ## 3. Test Results
 
 | Test ID | Test Case | Expected Result | Observed Result | Status |
