@@ -10,7 +10,7 @@ CORRECT_FLAG_HASHES = {
     "stage1": hashlib.sha256(b"SHADOWMKT{DarkK1ng99}").hexdigest(),
     "stage2": hashlib.sha256(b"SHADOWMKT{DarkNet_Chat_0x99}").hexdigest(),
     "stage3": hashlib.sha256(b"SHADOWMKT{SRVNODE7EAST}").hexdigest(),
-    "stage4": hashlib.sha256(b"SHADOWMKT{dashboard_access_string}").hexdigest(),
+    "stage4": hashlib.sha256(b"SHADOWMKT{SQL_BYP4SS_SUCC3SS}").hexdigest(),
     "stage5": hashlib.sha256(b"SHADOWMKT{server_codename}").hexdigest(),
     "stage6": hashlib.sha256(b"SHADOWMKT{final_confirmation_string}").hexdigest(),
 }
