@@ -11,8 +11,8 @@ CORRECT_FLAG_HASHES = {
     "stage2": hashlib.sha256(b"SHADOWMKT{DarkNet_Chat_0x99}").hexdigest(),
     "stage3": hashlib.sha256(b"SHADOWMKT{SRVNODE7EAST}").hexdigest(),
     "stage4": hashlib.sha256(b"SHADOWMKT{SQL_BYP4SS_SUCC3SS}").hexdigest(),
-    "stage5": hashlib.sha256(b"SHADOWMKT{server_codename}").hexdigest(),
-    "stage6": hashlib.sha256(b"SHADOWMKT{final_confirmation_string}").hexdigest(),
+    "stage5": hashlib.sha256(b"SHADOWMKT{UMBRA_NODE_9}").hexdigest(),
+    "stage6": hashlib.sha256(b"SHADOWMKT{TAKEDOWN_CONFIRMED}").hexdigest(),
 }
 
 LOG_FILE = "validation_log.txt"
