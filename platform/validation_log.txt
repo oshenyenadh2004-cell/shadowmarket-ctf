@@ -1,1 +1,14 @@
 2026-10-08T04:58:03.105632 | stage=stage1 | flag=SHADOWMKT{DarkK1ng99} | result=CORRECT
+2026-10-09T08:06:45.713802 | stage=stage1 | flag= | result=INCORRECT
+2026-10-09T08:29:33.827450 | stage=stage1 | flag=carderking_99 | result=INCORRECT
+2026-10-09T08:31:41.228771 | stage=stage1 | flag=vendor | result=INCORRECT
+2026-10-09T08:33:54.129476 | stage=stage1 | flag=SHADOWMKT{DarkK1ng99} | result=CORRECT
+2026-10-09T08:40:27.427648 | stage=stage2 | flag=SHADOWMKT{carderking_99} | result=INCORRECT
+2026-10-09T08:41:01.021321 | stage=stage2 | flag=SHADOWMKT{CarderKing_99} | result=INCORRECT
+2026-10-09T08:42:11.469877 | stage=stage2 | flag=SHADOWMKT{2022} | result=INCORRECT
+2026-10-09T09:17:13.295097 | stage=stage2 | flag=SHADOWMKT{DarkNet_Chat_0x99} | result=CORRECT
+2026-10-09T09:18:51.325281 | stage=stage3 | flag=VHRNYJSNT{JBFAUGE7VKCG} | result=INCORRECT
+2026-10-09T09:19:10.237917 | stage=stage3 | flag=SHADOWMKT{JBFAUGE7VKCG} | result=INCORRECT
+2026-10-09T09:20:03.651743 | stage=stage3 | flag=SHADOWMKTVHRNYJSNT{JBFAUGE7VKCG} | result=INCORRECT
+2026-10-09T09:24:04.664796 | stage=stage3 | flag=SHADOWMKT{DarkKng} | result=INCORRECT
+2026-10-09T09:41:07.291747 | stage=stage3 | flag=SHADOWMKT{SRVNODE7EAST} | result=CORRECT
