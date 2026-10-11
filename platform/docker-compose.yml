@@ -32,7 +32,7 @@ services:
     ports:
       - "5000:5000"
     networks:
-      - ctf-internal
+      - ctf-public
     restart: unless-stopped
 
 networks:

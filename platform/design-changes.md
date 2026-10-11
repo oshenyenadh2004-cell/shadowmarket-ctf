@@ -67,7 +67,13 @@ The current development and integration status is as follows:
 | Stages 5 and 6 | Challenge files exist; full challenge and download verification remains necessary |
 | Reset and recovery | Reset script reviewed; execution and recovery verification remain outstanding |
 | Network isolation | Configuration reviewed; comprehensive security verification remains outstanding |
+## Stage 4 Network Placement (discovered during final testing)
 
+Initial design placed Stage 4 on the `ctf-internal` network (`internal: true`) alongside the flag validator. During final pre-submission testing,
+we discovered Docker silently drops published port mappings on `internal: true`networks — this is a Docker
+platform limitation, not a misconfiguration. Since Stage 4 must be reachable by participants on `localhost:5000`, it was moved to the `ctf-public` network. 
+The flag validator remains fully isolated on `ctf-internal` with no host exposure and no internet egress, since it has no participant-facing 
+requirement.
 These statuses describe the current development environment and must be updated as teammates' changes are integrated and tested.
 
 ## 5. Pending Integration Work
